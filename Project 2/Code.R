@@ -26,7 +26,7 @@ Main_data <- Main_data[Main_data$FATALITIES !=0 |
                        Main_data$PROPDMG !=0 | 
                        Main_data$CROPDMG !=0, ]
 
-#---------Population health data processing
+#----------Population health data processing
 
 Health_data <- aggregate(cbind(FATALITIES, INJURIES) ~ EVTYPE, data = Main_data, FUN=sum)
 Health_data$PEOPLE_LOSS <- Health_data$FATALITIES + Health_data$INJURIES
